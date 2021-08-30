@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import { useSelector } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	counter: 0,
