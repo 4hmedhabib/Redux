@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+import { useSelector } from '@reduxjs/toolkit';
 
 const initialState = {
 	counter: 0,
