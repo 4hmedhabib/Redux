@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Fragment } from 'react';
 import Counter from './components/Counter';
 import Auth from './components/Auth';
@@ -5,12 +6,14 @@ import UserProfile from './components/UserProfile';
 import Header from './components/Header';
 
 function App() {
+	const isAuth = useSelector((state) => state.auth.isAuthenticated);
+
 	return (
 		<Fragment>
 			<Header />
-			<Auth />
-			{/* <UserProfile /> */}
-			<Counter />
+			{!isAuth && <Auth />}
+			{isAuth && <UserProfile />}
+			{/* <Counter /> */}
 		</Fragment>
 	);
 }
